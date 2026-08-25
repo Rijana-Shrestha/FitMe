@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Background colors -->
+    <color name="black">#FF000000</color>
+    <color name="fitme_background">#FF151211</color>
+    <color name="fitme_card">#FF242222</color>
+    <color name="fitme_card_light">#FF302D2D</color>
+
+    <!-- Primary colors -->
+    <color name="fitme_primary">#FF6DB6D6</color>
+    <color name="fitme_primary_dark">#FF4A9BBC</color>
+
+    <!-- Text colors -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="fitme_text_secondary">#FFAAA7A7</color>
+    <color name="fitme_text_hint">#FF777474</color>
+
+    <!-- Other UI colors -->
+    <color name="fitme_divider">#FF3A3737</color>
+
+</resources>
