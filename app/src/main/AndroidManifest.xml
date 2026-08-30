@@ -11,16 +11,36 @@
         android:roundIcon="@mipmap/fitme_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitMe">
+
+        <!-- Home screen -->
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+
+        <!-- Sign In screen -->
+        <activity
+            android:name=".SignIn"
+            android:exported="false" />
+
+        <!-- Sign Up screen -->
+        <activity
+            android:name=".SignUp"
+            android:exported="false" />
+
+        <!-- Starting screen -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>

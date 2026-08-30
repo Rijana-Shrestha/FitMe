@@ -13,6 +13,10 @@
     <string name="create_account">Create an account</string>
     <string name="email">Enter your email</string>
     <string name="email_hint">i.e. xyz037@gmail.com</string>
+
+    <string name="name">Full Name</string>
+    <string name="name_hint">Your name</string>
+
     <string name="password">Create password</string>
     <string name="confirm_password">Confirm password</string>
     <string name="password_hint">..........</string>
@@ -24,5 +28,117 @@
     <string name="enter_password">Enter your password</string>
     <string name="forgot_password">Forgot Password ?</string>
 
+    <!-- Onboarding1   -->
+    <string name="skip">Skip</string>
+    <string name="gender">What is your gender?</string>
+<string name="know">Let us know you better</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+  <string name="conti">Continue</string>
 
+<!--    Content Description-->
+    <string name="back">Back</string>
+
+
+<!--    Onboarding 2-->
+    <string name="measurement">Your height &amp; weight?</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="hint_ft">Ft</string>
+    <string name="ft">ft</string>
+    <string name="hint_inch">In</string>
+    <string name="inch">in</string>
+    <string name="hint_weight">Enter weight</string>
+    <string name="kg">kg</string>
+
+<!--    Onboarding 3-->
+    <string name="what_is_your_goal">What is your goal ?</string>
+    <string name="lose_weight">Lose Weight</string>
+    <string name="burn_fat">Burn Fat &amp; get lean</string>
+
+    <string name="get_fitter">Get Fitter</string>
+    <string name="tone_up">Tone up &amp; feel healthy </string>
+
+    <string name="gain_muscles">Gain muscles</string>
+    <string name="build_mass">Build mass &amp; strength</string>
+
+
+<!--    Home-->
+<!--    Heading-->
+    <string name="greeting">Good morning,</string>
+    <string name="user_name">Rijana</string>
+
+
+<!--    My plan-->
+    <string name="your_workouts">Your Workouts</string>
+   <string name="cd_empty_state_icon">Empty State</string>
+    <string name="my_plan_empty_title">Empty</string>
+    <string name="my_plan_empty_subtitle">Please add workouts</string>
+    <string name="cd_add_workout">Add workout</string>
+    <string name="cd_share_plan">Share your plan</string>
+    <string name="cd_more_options">Options</string>
+    <string name="cd_mark_complete">Mark complete</string>
+    <string name="cd_start_workout">Start Workout</string>
+
+<!--    Search Fragment-->
+    <string name="search_filter_title">Search &amp; filter</string>
+    <string name="hint_search">Search</string>
+    <string name="label_muscle_group">Muscle group</string>
+    <string name="label_workout_type">Workout type</string>
+    <string name="label_difficulty">Difficulty</string>
+    <string name="label_duration">Workout duration</string>
+    <string name="label_equipment">Equipment</string>
+    <string name="cd_expand_row">Expand options</string>
+    <string name="btn_show_results_placeholder">Show 12 results</string>
+
+    <string name="muscle_hamstrings">Hamstrings</string>
+    <string name="muscle_abs">Abs</string>
+    <string name="muscle_shoulders">Shoulders</string>
+    <string name="muscle_back">Back</string>
+    <string name="muscle_quadriceps">Quadriceps</string>
+    <string name="muscle_triceps">Triceps</string>
+
+    <string name="type_bodyweight">Bodyweight</string>
+    <string name="type_weighted">Weighted Exercise</string>
+    <string name="type_stretching">Stretching</string>
+    <string name="type_yoga">Yoga</string>
+    <string name="type_hiit">HIIT</string>
+
+
+<!--    Favourites Fragment-->
+    <string name="favorites_title">Favorites</string>
+    <string name="favorites_empty_title">No favorite workouts yet</string>
+
+
+<!--    Profile fragment-->
+    <string name="cd_settings">Settings</string>
+    <string name="cd_find_friends">Find friends</string>
+    <string name="profile_name_placeholder">Polly Strong</string>
+    <string name="profile_handle_placeholder">@fitness_grl97</string>
+    <string name="followers_placeholder">15 Followers</string>
+    <string name="following_placeholder">24 Following</string>
+    <string name="label_my_statistics">My statistics</string>
+    <string name="stat_workouts_placeholder">149</string>
+    <string name="stat_calories_placeholder">18,900</string>
+    <string name="stat_rewards_placeholder">53</string>
+    <string name="label_workouts_total">Workouts total</string>
+    <string name="label_calories_burnt">Calories burnt</string>
+    <string name="label_rewards_collected">Rewards collected</string>
+    <string name="label_leaderboard">Leaderboard</string>
+    <string name="tab_all_time">All time</string>
+    <string name="tab_today">Today</string>
+    <string name="tab_week">Week</string>
+    <string name="tab_month">Month</string>
+    <string name="label_achievements">Achievements</string>
+
+<!--    Chat-->
+    <string name="cd_go_back">Go back</string>
+    <string name="hint_message">Message</string>
+    <string name="cd_send_message">Send message</string>
+
+<!--    Inbox-->
+    <string name="messages_title">Messages</string>
+    <string name="cd_new_message">New message</string>
+    <string name="hint_search_followers">Search followers/following</string>
+    <string name="inbox_empty_text">No conversations yet — search a follower to start one</string>
 </resources>

@@ -40,38 +40,61 @@ android {
 }
 
 dependencies {
-    // ---- From Android Studio's default template (version catalog style) ----
+
+    // -----------------------------------------
+    // Android Studio / UI
+    // -----------------------------------------
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
+
+    // -----------------------------------------
+    // Testing
+    // -----------------------------------------
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
 
-    // ---- Lifecycle & ViewModel ----
+    // -----------------------------------------
+    // Lifecycle & ViewModel
+    // -----------------------------------------
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.4")
 
-    // ---- Navigation ----
+    // -----------------------------------------
+    // Navigation
+    // -----------------------------------------
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
 
-    // ---- Room (local database) ----
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    ksp("androidx.room:room-compiler:2.6.1")
+    // -----------------------------------------
+    // Room Database
+    // -----------------------------------------
+    val room_version = "2.6.1"
 
-    // ---- Firebase (cloud database + auth) ----
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+
+    // Room compiler - KSP
+    ksp("androidx.room:room-compiler:$room_version")
+
+    // -----------------------------------------
+    // Firebase
+    // -----------------------------------------
     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
 
-    // ---- RecyclerView + Images ----
+    // -----------------------------------------
+    // RecyclerView & Images
+    // -----------------------------------------
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("io.coil-kt:coil:2.6.0")
 
-    // ---- Coroutines (background work for database/network calls) ----
+    // -----------------------------------------
+    // Kotlin Coroutines
+    // -----------------------------------------
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 }

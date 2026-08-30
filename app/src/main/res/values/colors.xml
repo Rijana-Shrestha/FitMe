@@ -19,4 +19,9 @@
     <!-- Other UI colors -->
     <color name="fitme_divider">#FF3A3737</color>
 
+
+    <color name="fitme_accent">#4FC3F7</color>
+    <color name="fitme_text_primary">#FFFFFF</color>
+
+
 </resources>
