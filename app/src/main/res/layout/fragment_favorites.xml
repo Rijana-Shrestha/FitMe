@@ -16,6 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/trebuchet_ms"
             android:text="@string/favorites_title"
             android:textColor="@color/fitme_text_primary"
             android:textSize="20sp"
@@ -55,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:fontFamily="@font/trebuchet_ms"
             android:text="@string/favorites_empty_title"
             android:textColor="@color/fitme_text_secondary"
             android:textSize="14sp" />

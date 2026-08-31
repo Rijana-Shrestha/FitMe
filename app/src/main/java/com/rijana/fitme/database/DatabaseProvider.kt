@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.rijana.fitme.database.migration.MIGRATION_1_2
 import com.rijana.fitme.database.migration.MIGRATION_2_3
+import com.rijana.fitme.database.migration.MIGRATION_3_4
 
 object DatabaseProvider {
 
@@ -21,7 +22,8 @@ object DatabaseProvider {
             )
                 .addMigrations(
                     MIGRATION_1_2,
-                    MIGRATION_2_3
+                    MIGRATION_2_3,
+                    MIGRATION_3_4
                 )
                 .build()
 

@@ -26,6 +26,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/your_workouts"
                 android:textColor="@color/fitme_text_primary"
                 android:textSize="22sp"
@@ -46,8 +47,6 @@
                 android:contentDescription="@string/cd_more_options"
                 android:src="@drawable/ic_overflow_menu" />
         </LinearLayout>
-
-
 
         <!-- List of user's own workout entries -->
         <androidx.recyclerview.widget.RecyclerView
@@ -86,6 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:fontFamily="@font/trebuchet_ms"
             android:text="@string/my_plan_empty_title"
             android:textColor="@color/fitme_text_secondary"
             android:textSize="14sp" />
@@ -94,6 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:fontFamily="@font/trebuchet_ms"
             android:gravity="center"
             android:text="@string/my_plan_empty_subtitle"
             android:textColor="#5A5A5A"

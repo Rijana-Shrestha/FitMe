@@ -19,6 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/trebuchet_ms"
             android:text="@string/messages_title"
             android:textColor="@color/fitme_text_primary"
             android:textSize="20sp"
@@ -54,6 +55,7 @@
             android:layout_weight="1"
             android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
+            android:fontFamily="@font/trebuchet_ms"
             android:hint="@string/hint_search_followers"
             android:textColor="@color/fitme_text_primary"
             android:textColorHint="@color/fitme_text_secondary" />
@@ -75,6 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:fontFamily="@font/trebuchet_ms"
         android:text="@string/inbox_empty_text"
         android:textColor="@color/fitme_text_secondary"
         android:visibility="gone" />

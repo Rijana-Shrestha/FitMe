@@ -1,0 +1,20 @@
+<resources>
+    <!-- Style for inactive tab text -->
+    <style name="BottomNavInactiveText">
+        <item name="android:fontFamily">@font/trebuchet_ms</item>
+        <item name="fontFamily">@font/trebuchet_ms</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- Style for active tab text -->
+    <style name="BottomNavActiveText">
+        <item name="android:fontFamily">@font/trebuchet_ms</item>
+        <item name="fontFamily">@font/trebuchet_ms</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:fontFamily">@font/trebuchet_ms</item>
+        <item name="fontFamily">@font/trebuchet_ms</item>
+    </style>
+</resources>

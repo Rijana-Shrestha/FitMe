@@ -16,6 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/trebuchet_ms"
             android:text="@string/search_filter_title"
             android:textColor="@color/fitme_text_primary"
             android:textSize="20sp"
@@ -27,6 +28,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/bg_search_bar"
+            android:fontFamily="@font/trebuchet_ms"
             android:hint="@string/hint_search"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
@@ -37,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/trebuchet_ms"
             android:text="@string/label_muscle_group"
             android:textColor="@color/fitme_text_primary"
             android:textStyle="bold" />
@@ -52,36 +55,42 @@
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/muscle_hamstrings" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/muscle_abs" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/muscle_shoulders" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/muscle_back" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/muscle_quadriceps" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/muscle_triceps" />
         </com.google.android.material.chip.ChipGroup>
 
@@ -89,6 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/trebuchet_ms"
             android:text="@string/label_workout_type"
             android:textColor="@color/fitme_text_primary"
             android:textStyle="bold" />
@@ -104,30 +114,35 @@
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/type_bodyweight" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/type_weighted" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/type_stretching" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/type_yoga" />
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/type_hiit" />
         </com.google.android.material.chip.ChipGroup>
 
@@ -145,6 +160,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/label_difficulty"
                 android:textColor="@color/fitme_text_primary" />
 
@@ -168,6 +184,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/label_duration"
                 android:textColor="@color/fitme_text_primary" />
 
@@ -191,6 +208,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/label_equipment"
                 android:textColor="@color/fitme_text_primary" />
 
@@ -207,6 +225,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/fitme_accent"
+            android:fontFamily="@font/trebuchet_ms"
             android:text="@string/btn_show_results_placeholder"
             android:textColor="@color/fitme_background" />
 

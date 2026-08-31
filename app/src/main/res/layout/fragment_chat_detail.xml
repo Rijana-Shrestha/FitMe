@@ -38,7 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="10dp"
-            android:text="Sarah L"
+            android:fontFamily="@font/trebuchet_ms"
+            android:text="@string/default_chat_name"
             android:textColor="@color/fitme_text_primary"
             android:textStyle="bold" />
     </LinearLayout>
@@ -72,6 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/bg_search_bar"
+            android:fontFamily="@font/trebuchet_ms"
             android:hint="@string/hint_message"
             android:minHeight="44dp"
             android:paddingStart="14dp"

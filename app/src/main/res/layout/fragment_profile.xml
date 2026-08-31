@@ -61,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/profile_name_placeholder"
                 android:textColor="@color/fitme_text_primary"
                 android:textSize="18sp"
@@ -70,6 +71,7 @@
                 android:id="@+id/tv_profile_handle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/trebuchet_ms"
                 android:text="@string/profile_handle_placeholder"
                 android:textColor="@color/fitme_text_secondary"
                 android:textSize="12sp" />
@@ -85,6 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/trebuchet_ms"
                     android:text="@string/followers_placeholder"
                     android:textColor="@color/fitme_text_primary" />
 
@@ -92,6 +95,7 @@
                     android:id="@+id/tv_following_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/trebuchet_ms"
                     android:text="@string/following_placeholder"
                     android:textColor="@color/fitme_text_primary" />
             </LinearLayout>
@@ -102,6 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:fontFamily="@font/trebuchet_ms"
             android:text="@string/label_my_statistics"
             android:textColor="@color/fitme_text_primary"
             android:textStyle="bold" />
@@ -124,6 +129,7 @@
                     android:id="@+id/tv_total_workouts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/trebuchet_ms"
                     android:text="@string/stat_workouts_placeholder"
                     android:textColor="@color/fitme_text_primary"
                     android:textStyle="bold" />
@@ -131,6 +137,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/trebuchet_ms"
                     android:text="@string/label_workouts_total"
                     android:textColor="@color/fitme_text_secondary"
                     android:textSize="11sp" />
@@ -147,6 +154,7 @@
                     android:id="@+id/tv_calories_burnt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/trebuchet_ms"
                     android:text="@string/stat_calories_placeholder"
                     android:textColor="@color/fitme_text_primary"
                     android:textStyle="bold" />
@@ -154,6 +162,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/trebuchet_ms"
                     android:text="@string/label_calories_burnt"
                     android:textColor="@color/fitme_text_secondary"
                     android:textSize="11sp" />
@@ -170,6 +179,7 @@
                     android:id="@+id/tv_rewards_collected"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/trebuchet_ms"
                     android:text="@string/stat_rewards_placeholder"
                     android:textColor="@color/fitme_text_primary"
                     android:textStyle="bold" />
@@ -177,6 +187,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/trebuchet_ms"
                     android:text="@string/label_rewards_collected"
                     android:textColor="@color/fitme_text_secondary"
                     android:textSize="11sp" />
@@ -188,6 +199,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:fontFamily="@font/trebuchet_ms"
             android:text="@string/label_leaderboard"
             android:textColor="@color/fitme_text_primary"
             android:textStyle="bold" />
@@ -200,6 +212,7 @@
             android:background="@android:color/transparent"
             app:tabIndicatorColor="@color/fitme_accent"
             app:tabSelectedTextColor="@color/fitme_text_primary"
+            app:tabTextAppearance="@style/CustomTabTextAppearance"
             app:tabTextColor="@color/fitme_text_secondary">
 
             <com.google.android.material.tabs.TabItem
@@ -238,6 +251,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:fontFamily="@font/trebuchet_ms"
             android:text="@string/label_achievements"
             android:textColor="@color/fitme_text_primary"
             android:textStyle="bold" />

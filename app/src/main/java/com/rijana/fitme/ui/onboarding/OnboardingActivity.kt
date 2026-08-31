@@ -215,21 +215,11 @@ class OnboardingActivity : AppCompatActivity() {
                     ).show()
 
                 } else {
-                    Toast.makeText(
-                        this,
-                        "Onboarding completed!",
-                        Toast.LENGTH_SHORT
-                    ).show()
 
-                    // Go to Home
-                    startActivity(
-                        Intent(
-                            this,
-                            Home::class.java
-                        )
-                    )
                     selectedGoal = goal
 
+                    // Save first; navigation to Home happens
+                    // inside saveUserProfile() only on success.
                     saveUserProfile()
                 }
             }
@@ -300,8 +290,16 @@ class OnboardingActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                // TODO:
-                // Navigate to Home after we connect Home properly.
+                // Go to Home only now that the profile is
+                // actually persisted.
+                startActivity(
+                    Intent(
+                        this@OnboardingActivity,
+                        Home::class.java
+                    )
+                )
+
+                finish()
 
             } catch (e: Exception) {
 

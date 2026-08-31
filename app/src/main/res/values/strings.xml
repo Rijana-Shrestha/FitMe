@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
-<!--    Get Started Page-->
+    <!-- App & Onboarding Setup -->
     <string name="app_name">FitMe</string>
     <string name="fit">Fit</string>
     <string name="me">Me</string>
     <string name="slogan">Train. Track. Connect</string>
     <string name="get_started">Get started</string>
-
 
     <string name="create_account">Create an account</string>
     <string name="email">Enter your email</string>
@@ -28,19 +26,16 @@
     <string name="enter_password">Enter your password</string>
     <string name="forgot_password">Forgot Password ?</string>
 
-    <!-- Onboarding1   -->
+    <!-- Onboarding Step 1 -->
     <string name="skip">Skip</string>
     <string name="gender">What is your gender?</string>
-<string name="know">Let us know you better</string>
+    <string name="know">Let us know you better</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
-  <string name="conti">Continue</string>
-
-<!--    Content Description-->
+    <string name="conti">Continue</string>
     <string name="back">Back</string>
 
-
-<!--    Onboarding 2-->
+    <!-- Onboarding Step 2 -->
     <string name="measurement">Your height &amp; weight?</string>
     <string name="height">Height</string>
     <string name="weight">Weight</string>
@@ -51,45 +46,55 @@
     <string name="hint_weight">Enter weight</string>
     <string name="kg">kg</string>
 
-<!--    Onboarding 3-->
+    <!-- Onboarding Step 3 -->
     <string name="what_is_your_goal">What is your goal ?</string>
     <string name="lose_weight">Lose Weight</string>
     <string name="burn_fat">Burn Fat &amp; get lean</string>
-
     <string name="get_fitter">Get Fitter</string>
     <string name="tone_up">Tone up &amp; feel healthy </string>
-
     <string name="gain_muscles">Gain muscles</string>
     <string name="build_mass">Build mass &amp; strength</string>
 
-
-<!--    Home-->
-<!--    Heading-->
+    <!-- Home & Headers -->
     <string name="greeting">Good morning,</string>
     <string name="user_name">Rijana</string>
+    <string name="workouts_count_weekly">You\'ve done 3 workouts this week!</string>
+    <string name="weekly_goal_percent">75% of your weekly goal is completed.</string>
+    <string name="tab_title_discover">Discover</string>
+    <string name="tab_title_trainers">Trainers</string>
+    <string name="tab_title_my_plan">My plan</string>
 
+    <!-- Discover Fragment -->
+    <string name="title_most_popular_workouts">Most popular workouts</string>
+    <string name="title_quick_workouts">Quick workouts</string>
+    <string name="title_categories">Categories</string>
 
-<!--    My plan-->
+    <!-- Trainers Fragment -->
+    <string name="hint_search_trainers">Search trainers</string>
+    <string name="title_top_rated_trainers">Top rated trainers</string>
+    <string name="title_all_trainers">All trainers</string>
+
+    <!-- My Plan Fragment -->
     <string name="your_workouts">Your Workouts</string>
-   <string name="cd_empty_state_icon">Empty State</string>
-    <string name="my_plan_empty_title">Empty</string>
-    <string name="my_plan_empty_subtitle">Please add workouts</string>
+    <string name="cd_empty_state_icon">Empty State</string>
+    <string name="my_plan_empty_title">No Workouts Added</string>
+    <string name="my_plan_empty_subtitle">Tap the button below to add your first workout plan.</string>
     <string name="cd_add_workout">Add workout</string>
     <string name="cd_share_plan">Share your plan</string>
     <string name="cd_more_options">Options</string>
     <string name="cd_mark_complete">Mark complete</string>
     <string name="cd_start_workout">Start Workout</string>
 
-<!--    Search Fragment-->
+    <!-- Search & Filter Fragment -->
     <string name="search_filter_title">Search &amp; filter</string>
     <string name="hint_search">Search</string>
-    <string name="label_muscle_group">Muscle group</string>
-    <string name="label_workout_type">Workout type</string>
+    <string name="label_muscle_group">Muscle Group</string>
+    <string name="label_workout_type">Workout Type</string>
     <string name="label_difficulty">Difficulty</string>
     <string name="label_duration">Workout duration</string>
     <string name="label_equipment">Equipment</string>
     <string name="cd_expand_row">Expand options</string>
-    <string name="btn_show_results_placeholder">Show 12 results</string>
+    <string name="btn_show_results_placeholder">Show Results</string>
 
     <string name="muscle_hamstrings">Hamstrings</string>
     <string name="muscle_abs">Abs</string>
@@ -104,41 +109,80 @@
     <string name="type_yoga">Yoga</string>
     <string name="type_hiit">HIIT</string>
 
-
-<!--    Favourites Fragment-->
+    <!-- Favorites Fragment -->
     <string name="favorites_title">Favorites</string>
     <string name="favorites_empty_title">No favorite workouts yet</string>
 
-
-<!--    Profile fragment-->
+    <!-- Profile Fragment -->
     <string name="cd_settings">Settings</string>
-    <string name="cd_find_friends">Find friends</string>
-    <string name="profile_name_placeholder">Polly Strong</string>
-    <string name="profile_handle_placeholder">@fitness_grl97</string>
-    <string name="followers_placeholder">15 Followers</string>
-    <string name="following_placeholder">24 Following</string>
-    <string name="label_my_statistics">My statistics</string>
-    <string name="stat_workouts_placeholder">149</string>
-    <string name="stat_calories_placeholder">18,900</string>
-    <string name="stat_rewards_placeholder">53</string>
-    <string name="label_workouts_total">Workouts total</string>
-    <string name="label_calories_burnt">Calories burnt</string>
-    <string name="label_rewards_collected">Rewards collected</string>
+    <string name="cd_find_friends">Find Friends</string>
+    <string name="profile_name_placeholder">Rijana</string>
+    <string name="profile_handle_placeholder">@rijana</string>
+    <string name="followers_placeholder">128 Followers</string>
+    <string name="following_placeholder">94 Following</string>
+    <string name="label_my_statistics">My Statistics</string>
+    <string name="stat_workouts_placeholder">42</string>
+    <string name="stat_calories_placeholder">12.4k</string>
+    <string name="stat_rewards_placeholder">15</string>
+    <string name="label_workouts_total">Workouts</string>
+    <string name="label_calories_burnt">Kcal Burnt</string>
+    <string name="label_rewards_collected">Rewards</string>
     <string name="label_leaderboard">Leaderboard</string>
-    <string name="tab_all_time">All time</string>
+    <string name="tab_all_time">All Time</string>
     <string name="tab_today">Today</string>
-    <string name="tab_week">Week</string>
-    <string name="tab_month">Month</string>
+    <string name="tab_week">This Week</string>
+    <string name="tab_month">This Month</string>
     <string name="label_achievements">Achievements</string>
 
-<!--    Chat-->
+    <!-- Chat & Inbox Fragments -->
     <string name="cd_go_back">Go back</string>
-    <string name="hint_message">Message</string>
+    <string name="default_chat_name">Sarah L</string>
+    <string name="hint_message">Type a message...</string>
     <string name="cd_send_message">Send message</string>
-
-<!--    Inbox-->
     <string name="messages_title">Messages</string>
     <string name="cd_new_message">New message</string>
     <string name="hint_search_followers">Search followers/following</string>
     <string name="inbox_empty_text">No conversations yet — search a follower to start one</string>
+
+    <!-- RecyclerView Item Cards -->
+    <string name="default_badge">Premium</string>
+    <string name="default_rating">4.9</string>
+    <string name="default_workout_title">HIIT Cardio for beginners</string>
+    <string name="default_workout_author">Tadeas Izo</string>
+    <string name="cd_workout_image">Workout thumbnail</string>
+
+    <string name="default_trainer_name">Dorothy Situp</string>
+    <string name="default_trainer_specialty">Abs &amp; Core specialist</string>
+    <string name="btn_follow">Follow</string>
+    <string name="cd_trainer_photo">Trainer profile photo</string>
+
+    <string name="default_card_trainer_name">Tadeas Izo</string>
+    <string name="default_card_trainer_specialty">HIIT &amp; Cardio</string>
+
+    <string name="default_plan_title">Guided Breath Workouts</string>
+    <string name="default_plan_tags">Beginner · Strength · No Equipment</string>
+    <string name="default_plan_duration">10 min</string>
+    <string name="badge_new">New</string>
+    <string name="cd_favorite">Add to favorites</string>
+
+    <!-- Add Workout Plan Fragment -->
+    <string name="title_add_workout_plan">Add Workout Plan</string>
+    <string name="label_plan_title">Plan Title</string>
+    <string name="hint_plan_title">e.g., Morning HIIT Routine</string>
+    <string name="label_difficulty_level">Difficulty Level</string>
+    <string name="difficulty_beginner">Beginner</string>
+    <string name="difficulty_intermediate">Intermediate</string>
+    <string name="difficulty_advanced">Advanced</string>
+    <string name="label_focus_type">Focus Area</string>
+    <string name="focus_strength">Strength</string>
+    <string name="focus_cardio">Cardio</string>
+    <string name="focus_flexibility">Flexibility</string>
+    <string name="label_equipment_needed">Equipment</string>
+    <string name="equipment_none">No Equipment</string>
+    <string name="equipment_dumbbells">Dumbbells</string>
+    <string name="equipment_mat">Yoga Mat</string>
+    <string name="label_duration_minutes">Duration (Minutes)</string>
+    <string name="hint_duration">e.g., 15</string>
+    <string name="btn_save_plan">Save Workout Plan</string>
+
 </resources>
