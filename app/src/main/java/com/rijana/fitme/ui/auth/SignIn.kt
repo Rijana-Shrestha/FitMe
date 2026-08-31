@@ -1,4 +1,4 @@
-package com.rijana.fitme
+package com.rijana.fitme.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
+import com.rijana.fitme.MainActivity
+import com.rijana.fitme.R
 import com.rijana.fitme.database.DatabaseProvider
 import com.rijana.fitme.database.entity.User
-import com.rijana.fitme.ui.onboarding.OnboardingActivity
 import kotlinx.coroutines.launch
 
 class SignIn : AppCompatActivity() {
@@ -112,9 +113,7 @@ class SignIn : AppCompatActivity() {
     }
 
     // ==========================================
-    // FIREBASE CONFIRMED THE PASSWORD IS CORRECT —
-    // now find/build the local Room user and decide
-    // where to send them (Onboarding vs Home).
+    // FIREBASE CONFIRMED THE PASSWORD IS CORRECT
     // ==========================================
 
     private fun handleSuccessfulSignIn(
@@ -132,9 +131,6 @@ class SignIn : AppCompatActivity() {
                 var user = database.userDao()
                     .getUserByFirebaseUid(firebaseUid)
 
-                // If the Room row is missing (e.g. app storage was
-                // cleared but the Firebase account still exists),
-                // recreate a minimal local record so sign-in can continue.
                 if (user == null) {
 
                     database.userDao().insertUser(
@@ -173,22 +169,10 @@ class SignIn : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                // Has this user already finished onboarding?
-                val profile = database.userProfileDao()
-                    .getUserProfileByUserId(user.id)
-
-//                if (profile == null) {
-//
-//                    startActivity(
-//                        Intent(this@SignIn, OnboardingActivity::class.java)
-//                    )
-//
-//                } else {
-
-                    startActivity(
-                        Intent(this@SignIn, Home::class.java)
-                    )
-//                }
+                // Navigate to MainActivity (which hosts HomeFragment via nav_graph.xml)
+                startActivity(
+                    Intent(this@SignIn, MainActivity::class.java)
+                )
 
                 finish()
 

@@ -14,17 +14,17 @@
 
         <!-- Home screen -->
         <activity
-            android:name=".Home"
+            android:name=".ui.home.HomeFragment"
             android:exported="false" />
 
         <!-- Sign In screen -->
         <activity
-            android:name=".SignIn"
+            android:name=".ui.auth.SignIn"
             android:exported="false" />
 
         <!-- Sign Up screen -->
         <activity
-            android:name=".SignUp"
+            android:name=".ui.auth.SignUp"
             android:exported="false" />
 
         <!-- Starting screen -->

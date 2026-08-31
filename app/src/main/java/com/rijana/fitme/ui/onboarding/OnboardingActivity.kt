@@ -4,24 +4,23 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
+import com.rijana.fitme.MainActivity
 import com.rijana.fitme.R
 import com.rijana.fitme.database.DatabaseProvider
 import com.rijana.fitme.database.entity.UserProfile
 import kotlinx.coroutines.launch
-import com.rijana.fitme.Home
-import android.widget.ProgressBar
 
 class OnboardingActivity : AppCompatActivity() {
 
     private lateinit var btnBack: ImageView
     private lateinit var btnContinue: Button
     private lateinit var tvSkip: TextView
-
     private lateinit var progressBar: ProgressBar
 
     // Onboarding information
@@ -41,7 +40,6 @@ class OnboardingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_onboarding)
 
         btnBack = findViewById(R.id.btnBack)
@@ -51,7 +49,6 @@ class OnboardingActivity : AppCompatActivity() {
 
         // Show Gender screen first
         if (savedInstanceState == null) {
-
             supportFragmentManager.beginTransaction()
                 .replace(
                     R.id.onboardingFragmentContainer,
@@ -73,15 +70,10 @@ class OnboardingActivity : AppCompatActivity() {
     // ==========================================
 
     private fun setupBackButton() {
-
         btnBack.setOnClickListener {
-
             if (supportFragmentManager.backStackEntryCount > 0) {
-
                 supportFragmentManager.popBackStack()
-
             } else {
-
                 finish()
             }
         }
@@ -92,17 +84,13 @@ class OnboardingActivity : AppCompatActivity() {
     // ==========================================
 
     private fun setupProgressBar() {
-
         // Update progress whenever the displayed fragment changes
         supportFragmentManager.addOnBackStackChangedListener {
-
-            val currentFragment =
-                supportFragmentManager.findFragmentById(
-                    R.id.onboardingFragmentContainer
-                )
+            val currentFragment = supportFragmentManager.findFragmentById(
+                R.id.onboardingFragmentContainer
+            )
 
             when (currentFragment) {
-
                 is OnboardingGenderFragment -> {
                     progressBar.progress = 33
                 }
@@ -123,34 +111,25 @@ class OnboardingActivity : AppCompatActivity() {
     // ==========================================
 
     private fun setupContinueButton() {
-
         btnContinue.setOnClickListener {
-
-            val currentFragment =
-                supportFragmentManager.findFragmentById(
-                    R.id.onboardingFragmentContainer
-                )
+            val currentFragment = supportFragmentManager.findFragmentById(
+                R.id.onboardingFragmentContainer
+            )
 
             // =====================================
             // STEP 1 — GENDER
             // =====================================
-
             if (currentFragment is OnboardingGenderFragment) {
-
                 val gender = currentFragment.getSelectedGender()
 
                 if (gender == null) {
-
                     Toast.makeText(
                         this,
                         "Please select your gender",
                         Toast.LENGTH_SHORT
                     ).show()
-
                 } else {
-
                     selectedGender = gender
-
                     supportFragmentManager.beginTransaction()
                         .replace(
                             R.id.onboardingFragmentContainer,
@@ -164,26 +143,18 @@ class OnboardingActivity : AppCompatActivity() {
             // =====================================
             // STEP 2 — HEIGHT & WEIGHT
             // =====================================
-
             else if (currentFragment is OnboardingHeightWeightFragment) {
-
                 val feet = currentFragment.getHeightFeet()
                 val inches = currentFragment.getHeightInches()
                 val userWeight = currentFragment.getWeight()
 
-                if (feet == null ||
-                    inches == null ||
-                    userWeight == null
-                ) {
-
+                if (feet == null || inches == null || userWeight == null) {
                     Toast.makeText(
                         this,
                         "Please fill in all fields",
                         Toast.LENGTH_SHORT
                     ).show()
-
                 } else {
-
                     heightFeet = feet
                     heightInches = inches
                     weight = userWeight
@@ -201,25 +172,17 @@ class OnboardingActivity : AppCompatActivity() {
             // =====================================
             // STEP 3 — GOAL
             // =====================================
-
             else if (currentFragment is OnboardingGoalFragment) {
-
                 val goal = currentFragment.getSelectedGoal()
 
                 if (goal == null) {
-
                     Toast.makeText(
                         this,
                         "Please select your goal",
                         Toast.LENGTH_SHORT
                     ).show()
-
                 } else {
-
                     selectedGoal = goal
-
-                    // Save first; navigation to Home happens
-                    // inside saveUserProfile() only on success.
                     saveUserProfile()
                 }
             }
@@ -227,62 +190,51 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     // ==========================================
-    // SAVE PROFILE TO ROOM
+    // SAVE PROFILE TO ROOM & NAVIGATE HOME
     // ==========================================
 
     private fun saveUserProfile() {
-
         val firebaseUser = auth.currentUser
 
         if (firebaseUser == null) {
-
             Toast.makeText(
                 this,
                 "User not found. Please sign in again.",
                 Toast.LENGTH_LONG
             ).show()
-
             return
         }
 
         lifecycleScope.launch {
-
             try {
-
                 // Find the Room user using Firebase UID
-                val user = database.userDao()
-                    .getUserByFirebaseUid(firebaseUser.uid)
+                val user = database.userDao().getUserByFirebaseUid(firebaseUser.uid)
 
                 if (user == null) {
-
                     Toast.makeText(
                         this@OnboardingActivity,
                         "User record not found.",
                         Toast.LENGTH_LONG
                     ).show()
-
                     return@launch
                 }
 
                 // Create UserProfile
                 val profile = UserProfile(
-
                     userId = user.id,
-
                     gender = selectedGender!!,
-
                     heightFeet = heightFeet!!,
-
                     heightInches = heightInches!!,
-
                     weight = weight!!,
-
                     goal = selectedGoal!!
                 )
 
                 // Save to Room
-                database.userProfileDao()
-                    .insertUserProfile(profile)
+                database.userProfileDao().insertUserProfile(profile)
+
+                // 1. Mark user as logged in so MainActivity knows to display the main app shell
+                val preferences = getSharedPreferences("FitMePrefs", MODE_PRIVATE)
+                preferences.edit().putBoolean("loggedIn", true).apply()
 
                 Toast.makeText(
                     this@OnboardingActivity,
@@ -290,19 +242,13 @@ class OnboardingActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                // Go to Home only now that the profile is
-                // actually persisted.
-                startActivity(
-                    Intent(
-                        this@OnboardingActivity,
-                        Home::class.java
-                    )
-                )
-
+                // 2. Clear activity stack and navigate to MainActivity
+                val intent = Intent(this@OnboardingActivity, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
                 finish()
 
             } catch (e: Exception) {
-
                 Toast.makeText(
                     this@OnboardingActivity,
                     "Failed to save profile: ${e.message}",
@@ -317,16 +263,14 @@ class OnboardingActivity : AppCompatActivity() {
     // ==========================================
 
     private fun setupSkipButton() {
-
         tvSkip.setOnClickListener {
+            // Save login flag on skip as well
+            val preferences = getSharedPreferences("FitMePrefs", MODE_PRIVATE)
+            preferences.edit().putBoolean("loggedIn", true).apply()
 
-            startActivity(
-                Intent(
-                    this,
-                    Home::class.java
-                )
-            )
-
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
             finish()
         }
     }

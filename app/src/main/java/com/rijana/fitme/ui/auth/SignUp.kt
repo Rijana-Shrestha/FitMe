@@ -1,4 +1,4 @@
-package com.rijana.fitme
+package com.rijana.fitme.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,10 +9,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
+import com.rijana.fitme.MainActivity
+import com.rijana.fitme.R
 import com.rijana.fitme.database.DatabaseProvider
 import com.rijana.fitme.database.entity.User
-import kotlinx.coroutines.launch
 import com.rijana.fitme.ui.onboarding.OnboardingActivity
+import kotlinx.coroutines.launch
 
 class SignUp : AppCompatActivity() {
 
