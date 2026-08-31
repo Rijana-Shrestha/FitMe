@@ -36,17 +36,34 @@ class OnboardingGenderFragment : Fragment() {
         cardMale = view.findViewById(R.id.cardMale)
         cardOther = view.findViewById(R.id.cardOther)
 
+        // Female
         cardFemale.setOnClickListener {
             selectedGender = "Female"
+            updateSelectedCard(cardFemale)
         }
 
+        // Male
         cardMale.setOnClickListener {
             selectedGender = "Male"
+            updateSelectedCard(cardMale)
         }
 
+        // Other
         cardOther.setOnClickListener {
             selectedGender = "Other"
+            updateSelectedCard(cardOther)
         }
+    }
+
+    private fun updateSelectedCard(selectedCard: LinearLayout) {
+
+        // Unselect all cards
+        cardFemale.isSelected = false
+        cardMale.isSelected = false
+        cardOther.isSelected = false
+
+        // Select the clicked card
+        selectedCard.isSelected = true
     }
 
     fun getSelectedGender(): String? {

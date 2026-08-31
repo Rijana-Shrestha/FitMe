@@ -3,6 +3,7 @@ package com.rijana.fitme.database
 import android.content.Context
 import androidx.room.Room
 import com.rijana.fitme.database.migration.MIGRATION_1_2
+import com.rijana.fitme.database.migration.MIGRATION_2_3
 
 object DatabaseProvider {
 
@@ -18,7 +19,10 @@ object DatabaseProvider {
                 FitMeDatabase::class.java,
                 "fitme_database"
             )
-                .addMigrations(MIGRATION_1_2)
+                .addMigrations(
+                    MIGRATION_1_2,
+                    MIGRATION_2_3
+                )
                 .build()
 
             INSTANCE = instance
