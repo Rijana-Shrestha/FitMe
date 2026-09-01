@@ -102,6 +102,25 @@ class DiscoverFragment : Fragment() {
 
             categoriesRecyclerView.adapter =
                 CategoryAdapter(categories)
+
+            // Most Popular Workouts: one representative exercise per muscle
+            // group. There's no real Workout/popularity data yet, so this
+            // is a stand-in until a proper Workout entity exists.
+            val popularExercises =
+                database.exerciseDao().getOneExercisePerMuscleGroup()
+
+            android.util.Log.d(
+                "FITME_DISCOVER",
+                "Most popular: ${popularExercises.map { it.name }}"
+            )
+
+            val popularRecyclerView =
+                requireView().findViewById<
+                        androidx.recyclerview.widget.RecyclerView
+                        >(R.id.rv_popular_workouts)
+
+            popularRecyclerView.adapter =
+                WorkoutCardAdapter(popularExercises)
         }
     }
 }

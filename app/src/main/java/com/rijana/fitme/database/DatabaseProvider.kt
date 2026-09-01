@@ -5,11 +5,17 @@ import androidx.room.Room
 import com.rijana.fitme.database.migration.MIGRATION_1_2
 import com.rijana.fitme.database.migration.MIGRATION_2_3
 import com.rijana.fitme.database.migration.MIGRATION_3_4
-import com.rijana.fitme.database.entity.Exercise
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
+/**
+ * Provides the singleton [FitMeDatabase] instance.
+ *
+ * NOTE: Seeding is intentionally NOT done here. It previously ran a second,
+ * concurrent seed coroutine alongside [ExerciseSeeder] (called from
+ * FitMeApplication.onCreate), which raced on the "is the table empty" check
+ * and could insert the 16 seed exercises twice on first launch. Seeding now
+ * happens in exactly one place: ExerciseSeeder, invoked once from
+ * FitMeApplication.
+ */
 object DatabaseProvider {
 
     @Volatile
@@ -19,7 +25,7 @@ object DatabaseProvider {
 
         return INSTANCE ?: synchronized(this) {
 
-            val instance = Room.databaseBuilder(
+            INSTANCE ?: Room.databaseBuilder(
                 context.applicationContext,
                 FitMeDatabase::class.java,
                 "fitme_database"
@@ -30,26 +36,7 @@ object DatabaseProvider {
                     MIGRATION_3_4
                 )
                 .build()
-
-            INSTANCE = instance
-
-            // Seed exercises
-            CoroutineScope(Dispatchers.IO).launch {
-
-                val exerciseDao = instance.exerciseDao()
-
-                val existingExercises =
-                    exerciseDao.getAllExercises()
-
-                if (existingExercises.isEmpty()) {
-
-                    ExerciseSeedData.exercises.forEach { exercise ->
-                        exerciseDao.insertExercise(exercise)
-                    }
-                }
-            }
-
-            instance
+                .also { INSTANCE = it }
         }
     }
 }
