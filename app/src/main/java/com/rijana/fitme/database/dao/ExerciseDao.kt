@@ -13,9 +13,6 @@ interface ExerciseDao {
     @Insert
     suspend fun insertExercise(exercise: Exercise): Long
 
-    @Insert
-    suspend fun insertExercises(exercises: List<Exercise>)
-
     @Query("SELECT * FROM exercises WHERE id = :id")
     suspend fun getExerciseById(id: Int): Exercise?
 
@@ -23,9 +20,10 @@ interface ExerciseDao {
     suspend fun getAllExercises(): List<Exercise>
 
     @Query("SELECT * FROM exercises WHERE muscleGroup = :muscleGroup")
-    suspend fun getExercisesByMuscleGroup(
-        muscleGroup: String
-    ): List<Exercise>
+    suspend fun getExercisesByMuscleGroup(muscleGroup: String): List<Exercise>
+
+    @Query("SELECT COUNT(*) FROM exercises")
+    suspend fun getExerciseCount(): Int
 
     @Update
     suspend fun updateExercise(exercise: Exercise)

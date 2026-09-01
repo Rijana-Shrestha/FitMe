@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".FitMeApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,10 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitMe">
 
-        <!-- Home screen -->
-        <activity
-            android:name=".ui.home.HomeFragment"
-            android:exported="false" />
 
         <!-- Sign In screen -->
         <activity
@@ -26,6 +23,7 @@
         <activity
             android:name=".ui.auth.SignUp"
             android:exported="false" />
+
 
         <!-- Starting screen -->
         <activity

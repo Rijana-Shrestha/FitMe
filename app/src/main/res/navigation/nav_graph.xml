@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.rijana.fitme.ui.navigation.SearchFragment"
+        android:name="com.rijana.fitme.ui.search.SearchFragment"
         android:label="Search"
         tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/chatFragment"
-        android:name="com.rijana.fitme.ui.navigation.InboxFragment"
+        android:name="com.rijana.fitme.ui.chat.InboxFragment"
         android:label="Chat"
         tools:layout="@layout/fragment_inbox">
 
@@ -41,13 +41,13 @@
 
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.rijana.fitme.ui.navigation.FavoritesFragment"
+        android:name="com.rijana.fitme.ui.favorites.FavoritesFragment"
         android:label="Favorites"
         tools:layout="@layout/fragment_favorites" />
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.rijana.fitme.ui.navigation.ProfileFragment"
+        android:name="com.rijana.fitme.ui.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 

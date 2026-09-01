@@ -1,4 +1,4 @@
-package com.rijana.fitme.ui.navigation
+package com.rijana.fitme.ui.chat
 
 import android.os.Bundle
 import android.view.LayoutInflater

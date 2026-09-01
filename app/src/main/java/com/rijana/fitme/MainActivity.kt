@@ -1,13 +1,16 @@
 package com.rijana.fitme
 
 import android.content.Intent
+//import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
@@ -21,7 +24,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Enable edge-to-edge drawing
         enableEdgeToEdge()
+
+        // Set status bar background color to match app background
+        window.statusBarColor = ContextCompat.getColor(this, R.color.black) // Or use Color.parseColor("#0D0D0D")
+
+        // Force status bar icons (battery, wifi, time) to render in white
+        val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
+        windowInsetsController.isAppearanceLightStatusBars = false
 
         val database = DatabaseProvider.getDatabase(this)
         lifecycleScope.launch {
@@ -55,7 +67,6 @@ class MainActivity : AppCompatActivity() {
 
         bottomNav?.setupWithNavController(navController)
 
-        // Hide bottom navigation bar when on chat detail view
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.chatDetailFragment -> {
@@ -69,10 +80,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupWindowInsets() {
-        val rootLayout = findViewById<View>(R.id.main) ?: return
-        ViewCompat.setOnApplyWindowInsetsListener(rootLayout) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+        val rootLayout = findViewById<View>(R.id.main) ?: findViewById<View>(android.R.id.content)
+
+        ViewCompat.setOnApplyWindowInsetsListener(rootLayout) { view, insets ->
+            val statusBarInsets = insets.getInsets(WindowInsetsCompat.Type.statusBars())
+            val navigationBarInsets = insets.getInsets(WindowInsetsCompat.Type.navigationBars())
+
+            // Padding top ensures app content starts right below the status bar
+            view.setPadding(0, statusBarInsets.top, 0, navigationBarInsets.bottom)
             insets
         }
     }

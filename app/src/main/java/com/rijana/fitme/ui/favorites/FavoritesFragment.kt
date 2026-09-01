@@ -1,4 +1,4 @@
-package com.rijana.fitme.ui.navigation
+package com.rijana.fitme.ui.favorites
 
 import android.os.Bundle
 import android.view.LayoutInflater
