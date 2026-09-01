@@ -1,121 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    android:orientation="vertical">
+    android:background="#000000">
 
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:background="#000000"
+        android:elevation="0dp"
+        app:liftOnScroll="false">
 
-        <!-- Greeting row -->
+        <!-- Scrolls off screen: greeting + weekly progress card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp"
+            app:layout_scrollFlags="scroll|enterAlways">
 
-            <ImageView
-                android:id="@+id/iv_avatar"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/bg_circle_avatar"
-                android:src="@drawable/placeholder_avatar" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="12dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/trebuchet_ms"
-                    android:text="@string/greeting"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_username"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/trebuchet_ms"
-                    android:text="@string/user_name"
-                    android:textColor="#4FC3F7"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/iv_notifications"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_nav_notification" />
-        </LinearLayout>
-
-        <!-- Weekly progress card -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:cardBackgroundColor="#1A1A1A"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="0dp">
-
+            <!-- Greeting row -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_workouts_count"
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_circle_avatar"
+                    android:src="@drawable/placeholder_avatar" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/trebuchet_ms"
-                    android:text="@string/workouts_count_weekly"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tv_goal_percent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/trebuchet_ms"
-                    android:text="@string/weekly_goal_percent"
-                    android:textColor="#8A8A8A"
-                    android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/trebuchet_ms"
+                        android:text="@string/greeting"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                <ProgressBar
-                    android:id="@+id/progress_weekly_goal"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:layout_marginTop="12dp"
-                    android:max="100"
-                    android:progress="75"
-                    android:progressTint="#4FC3F7" />
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/trebuchet_ms"
+                        android:text="@string/user_name"
+                        android:textColor="#4FC3F7"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_notifications"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_nav_notification" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
-        <!-- Discover / Trainers / My plan tabs -->
+            <!-- Weekly progress card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="#1A1A1A"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_workouts_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/trebuchet_ms"
+                        android:text="@string/workouts_count_weekly"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_goal_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/trebuchet_ms"
+                        android:text="@string/weekly_goal_percent"
+                        android:textColor="#8A8A8A"
+                        android:textSize="12sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_weekly_goal"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="12dp"
+                        android:max="100"
+                        android:progress="75"
+                        android:progressTint="#4FC3F7" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Spacer so the pinned TabLayout below doesn't visually collide
+                 with the card while it's fully expanded -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp" />
+
+        </LinearLayout>
+
+        <!-- Pinned: no layout_scrollFlags means this stays fixed at the top
+             of the AppBarLayout once the section above has scrolled away -->
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@android:color/transparent"
+            android:background="#000000"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             app:tabIndicatorColor="#4FC3F7"
+            app:tabIndicatorFullWidth="false"
             app:tabIndicatorHeight="2dp"
             app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabMinWidth="0dp"
+            app:tabPaddingStart="4dp"
+            app:tabPaddingEnd="4dp"
             app:tabSelectedTextColor="#FFFFFF"
             app:tabTextAppearance="@style/CustomTabTextAppearance"
             app:tabTextColor="#8A8A8A">
@@ -136,13 +162,15 @@
                 android:text="@string/tab_title_my_plan" />
         </com.google.android.material.tabs.TabLayout>
 
-    </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Swipeable content for the 3 tabs -->
+    <!-- Swipeable content for the 3 tabs. layout_behavior wires it to the
+         AppBarLayout above so nested-scrolling children inside each tab
+         (RecyclerView / NestedScrollView) drive the collapse/expand. -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager_home"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
